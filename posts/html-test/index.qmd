@@ -10,16 +10,18 @@ execute:
   echo: false
 ---
 
-### Display Interactive JavaScript with ObservableJS
-
+#### Stage Data
 ```{ojs}
+//| echo: fenced
 filtered = transpose(data).filter(function(penguin) {
   return bill_length_min < penguin.bill_length_mm &&
          islands.includes(penguin.island);
 })
 ```
 
+#### Interactive JavaScript with ObservableJS
 ```{ojs}
+//| echo: fenced
 viewof bill_length_min = Inputs.range(
   [32, 50], 
   {value: 35, step: 1, label: "Bill length (min):"}
@@ -32,7 +34,9 @@ viewof islands = Inputs.checkbox(
 )
 ```
 
+#### Display Plot with ObservableJS
 ```{ojs}
+//| echo: fenced
 Plot.rectY(filtered, 
   Plot.binX(
     {y: "count"}, 
@@ -51,14 +55,6 @@ Plot.rectY(filtered,
   }
 )
 ```
-
-```{python}
-#| echo: fenced
-import pandas as pd
-penguins = pd.read_csv("palmer-penguins.csv")
-ojs_define(data = penguins)
-```
-
 ::: {.column-margin}
 
 # Vanilla JavaScript for a Simple Bar Chart
@@ -87,3 +83,11 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 :::
+
+#### Import Data from a CSV File with Python
+```{python}
+#| echo: fenced
+import pandas as pd
+penguins = pd.read_csv("palmer-penguins.csv")
+ojs_define(data = penguins)
+```

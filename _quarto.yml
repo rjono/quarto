@@ -11,10 +11,9 @@ website:
     collapse: false
     logo: mlogo2.png
     right:
+      # - posts/html-test/index.qmd
       - posts/illustration/index.qmd
       - posts.qmd
-      - posts/html-test/index.qmd
-
       - icon: github
         href: https://github.com/
       - icon: twitter
