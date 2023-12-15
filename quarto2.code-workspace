@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "quarto2",
+			"path": "."
+		},
+		{
+			"name": "testquartoblog",
+			"path": "../testquartoblog"
+		}
+	],
+	"settings": {}
+}

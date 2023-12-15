@@ -1,0 +1,35 @@
+/*-- scss:defaults --*/
+$h2-font-size:          1.6rem !default;
+$headings-font-weight:  500 !default;
+  
+
+
+/*-- scss:rules --*/
+h1, h2, h3, h4, h5, h6 {
+  text-shadow: -1px -1px 0 rgba(0, 0, 0, .3);
+}
+
+
+// Assuming the main content has a max-width set or is using a Bootstrap container class
+.navbar-container {
+  // Use the same max-width as the main content or match it to a Bootstrap container
+  max-width: 750px; // Adjust this variable to match your main content width
+  margin-right: auto;
+  margin-left: auto;
+
+  // Responsive behavior
+  @include media-breakpoint-up(sm) {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  @include media-breakpoint-up(md) {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+
+  // // Custom styling for navbar-brand-container and navbar-nav if needed
+  // .navbar-brand-container, .navbar-nav {
+  //   // Custom styles here
+  // }
+}

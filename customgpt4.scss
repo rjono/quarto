@@ -1,0 +1,44 @@
+/*-- scss:defaults --*/
+$h2-font-size:          1.6rem !default;
+$headings-font-weight:  500 !default;
+  
+
+
+/*-- scss:rules --*/
+h1, h2, h3, h4, h5, h6 {
+  text-shadow: -1px -1px 0 rgba(0, 0, 0, .3);
+}
+
+
+// Optional: Define a custom breakpoint if the defaults don't suit your needs
+$custom-breakpoint: 480px;
+
+// Import Bootstrap's functions if they aren't already imported
+// @import "node_modules/bootstrap/scss/functions";
+// @import "node_modules/bootstrap/scss/variables";
+// @import "node_modules/bootstrap/scss/mixins";
+
+// Override the navbar-toggler for custom breakpoint
+@media (max-width: $custom-breakpoint) {
+  .navbar-expand-custom {
+    .navbar-toggler {
+      display: flex;
+    }
+    .navbar-collapse {
+      display: none !important;
+    }
+  }
+}
+
+// Apply the custom breakpoint class to the navbar
+.navbar-expand-custom {
+  @include media-breakpoint-up(custom) {
+    .navbar-collapse {
+      display: flex !important;
+      flex-basis: auto;
+    }
+    .navbar-toggler {
+      display: none;
+    }
+  }
+}

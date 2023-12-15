@@ -1,0 +1,45 @@
+/*-- scss:defaults --*/
+$h2-font-size:          1.6rem !default;
+$headings-font-weight:  500 !default;
+  
+
+
+/*-- scss:rules --*/
+h1, h2, h3, h4, h5, h6 {
+  text-shadow: -1px -1px 0 rgba(0, 0, 0, .3);
+}
+
+
+.navbar-container {
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%; // Ensure it takes the full width of the container
+  padding-right: 15px; // Adjust as per your design requirements
+  padding-left: 15px; // Adjust as per your design requirements
+
+  // Use Bootstrap breakpoints to adjust the maximum width
+  @include media-breakpoint-up(sm) {
+    max-width: map-get($container-max-widths, sm);
+  }
+
+  @include media-breakpoint-up(md) {
+    max-width: map-get($container-max-widths, md);
+  }
+
+  @include media-breakpoint-up(lg) {
+    max-width: map-get($container-max-widths, lg);
+  }
+
+  @include media-breakpoint-up(xl) {
+    max-width: map-get($container-max-widths, xl);
+  }
+
+  // Ensuring the inner elements (brand and nav) align to the sides within the max-width
+  .navbar-brand-container {
+    margin-left: 0;
+  }
+
+  .navbar-nav {
+    margin-right: 0;
+  }
+}

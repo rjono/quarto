@@ -1,0 +1,15 @@
+---
+title: "Vizualisation test"
+description: "jaskgjaksjdg;kajsgdfkl;jaskl;d j I hope it works "
+author: "Fizz McPhee"
+date: "5/22/2021"
+draft: false
+---
+
+### Hey hey hey visual edit mode not bad
+
+**bold** *italic* yaya
+
+This is nicer for sure.
+
+Below is an interactive visualisation:

@@ -1,0 +1,33 @@
+/*-- scss:defaults --*/
+// $h2-font-size:          1.6rem !default;
+// $headings-font-weight:  500 !default;
+  
+
+
+/*-- scss:rules --*/
+// h1, h2, h3, h4, h5, h6 {
+//   text-shadow: -1px -1px 0 rgba(0, 0, 0, .3);
+// }
+
+.navbar {
+  justify-content: center; // Center the items in the navbar
+
+  .navbar-container {
+    display: flex;
+    justify-content: space-between; // Spreads out the items inside the container
+    width: 70%; // Ensures the container takes full width of the navbar
+
+    .navbar-brand-container {
+      flex-grow: 1; // Allows the brand container to grow and push nav items to center
+      display: flex;
+      justify-content: center; // Centers the brand logo
+    }
+
+    .navbar-nav {
+      flex-grow: 1; // Allows the nav items to grow and maintain the center position
+      display: flex;
+      justify-content: center; // Centers the nav items
+      padding-right: 0; // Removes padding that might offset the centering
+    }
+  }
+}

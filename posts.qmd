@@ -1,0 +1,15 @@
+---
+title: "posts"
+listing:
+  contents: posts
+  sort: "date desc"
+  type: table
+  # fields: [image, date, title, author, reading-time]
+  categories: false
+  sort-ui: false
+  filter-ui: false
+page-layout: article
+title-block-banner: false
+---
+
+
