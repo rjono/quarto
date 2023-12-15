@@ -1,0 +1,89 @@
+---
+title: "Illustration of JavaScript"
+author: "Bobby Seagull"
+date: "2023-11-24"
+categories: [news]
+format:
+  html:
+    code-fold: true
+execute:
+  echo: false
+---
+
+### Display Interactive JavaScript with ObservableJS
+
+```{ojs}
+filtered = transpose(data).filter(function(penguin) {
+  return bill_length_min < penguin.bill_length_mm &&
+         islands.includes(penguin.island);
+})
+```
+
+```{ojs}
+viewof bill_length_min = Inputs.range(
+  [32, 50], 
+  {value: 35, step: 1, label: "Bill length (min):"}
+)
+viewof islands = Inputs.checkbox(
+  ["Torgersen", "Biscoe", "Dream"], 
+  { value: ["Torgersen", "Biscoe"], 
+    label: "Islands:"
+  }
+)
+```
+
+```{ojs}
+Plot.rectY(filtered, 
+  Plot.binX(
+    {y: "count"}, 
+    {x: "body_mass_g", fill: "species", thresholds: 20}
+  ))
+  .plot({
+    facet: {
+      data: filtered,
+      x: "sex",
+      y: "species",
+      marginRight: 80
+    },
+    marks: [
+      Plot.frame(),
+    ]
+  }
+)
+```
+
+```{python}
+#| echo: fenced
+import pandas as pd
+penguins = pd.read_csv("palmer-penguins.csv")
+ojs_define(data = penguins)
+```
+
+::: {.column-margin}
+
+# Vanilla JavaScript for a Simple Bar Chart
+
+<div id="bar-chart"></div>
+
+<script>
+// Vanilla JavaScript for a Simple Bar Chart
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Access the container for the bar chart
+    var container = document.getElementById('bar-chart');
+
+    // Sample data for the bar chart
+    var data = [4, 8, 15, 16, 23, 42];
+
+    // Create bars for the chart
+    data.forEach(function(d) {
+        var bar = document.createElement('div');
+        bar.style.width = d * 10 + 'px';
+        bar.style.height = '20px';
+        bar.style.backgroundColor = 'steelblue';
+        bar.style.margin = '5px 0';
+        container.appendChild(bar);
+    });
+});
+</script>
+:::
