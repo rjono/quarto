@@ -1,0 +1,48 @@
+---
+layout: default
+title: Manifest AI
+format:
+  html:
+    code-fold: true
+---
+
+<div class="py-8 px-4 sm:px-8 sm:pt-8 sm:pb-8">
+    <div class="max-w-xl mx-auto">
+        <h1 class="text-2xl font-mono pb-4 ">Manifest AI</h1>
+        <div class="text-sm">
+            <p class="pb-2">
+                What will AI be capable of tomorrow?
+            </p>
+            <p class="pb-2">
+                We're building a foundational large language model featuring an infinite context window. Our breakthrough in AI training enhances understanding and processing capabilities, offering deeper, more insightful AI solutions across diverse industries.
+            </p>
+            <div class="flex flex-wrap pt-4 gap-2">
+              <a class="underline" href="mailto:jacob@manifestai.co">Get early access</a>
+            </div>
+
+        <div class="pt-8">
+            <h2 class="font-mono text-lg flex justify-between pb-4 gap-1">Frequently Asked Questions</h2>
+            <ul class="pl-4 list-disc">
+                <li class="pb-2">What sets Manifest AI's model apart? Our model's infinite context window allows for unparalleled depth in understanding and response accuracy.</li>
+                <li class="pb-2">How does the infinite context window benefit users? It enables more precise and comprehensive responses, ideal for complex tasks and human-like interactions.</li>
+                <li class="pb-2">What industries can use Manifest AI's technology? Various sectors including healthcare, finance, education, and customer service benefit from our deep data processing AI.</li>
+            </ul>
+        </div>
+
+        <div class="pt-4">
+            <h2 class="font-mono text-lg flex justify-between">Recent Publications</h2>
+            {% for post in site.posts limit:5 %}
+            <a class="flex gap-1 items-center pt-4 underline hover:text-gray-600" href="{{ post.url }}">
+                <div>{{ post.title }}</div>
+            </a>
+            {% endfor %}
+        </div>
+
+        <div class="pt-8">
+            <h2 class="font-mono text-lg flex justify-between pb-4 gap-1">Who are we?</h2>
+            <p class="pb-2"> <a class="underline" href="https://twitter.com/carlesgelada">Carles Gelada</a> and  <a class="underline" href="https://jacobbuckman.com/">Jacob Buckman</a> are the co-founders who met at Google Brain, where they have been collaborating for over five years. Gelada, with significant contributions as a Research Scientist at OpenAI, has 1,300 citations to his name. Buckman, a PhD candidate at McGill University, complements this with 1,500 citations for his research. Their joint expertise continues to make waves in AI research.</p>
+        </div>
+        </div>
+    </div>
+
+</div>
