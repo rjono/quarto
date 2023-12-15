@@ -9,12 +9,16 @@
 // $nav-link-padding-x:    10rem !default;
 // $navbar-light-bg:       #e70404;
 // USE THIS TO TEST
-$body-bg: green;
+// $body-bg: green;
 // $navbar-padding-x:                  10rem !important;
 // $nav-link-padding-x:    5rem !important; changes between
 // $navbar-padding-y:             0;
 
 /*-- scss:rules --*/
+@mixin apply-sfmono {
+  font-family: 'SFMono-Regular', monospace;
+}
+
 h1, h2, h3, h4, h5, h6 {
-  text-shadow: -5px -5px 0 rgb(248, 6, 6)
+  @include apply-sfmono;
 }

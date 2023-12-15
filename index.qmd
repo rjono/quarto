@@ -1,6 +1,7 @@
 ---
-title: "contact"
-image: profile.jpg
+title: "Manifest AI"
+mainfont: ui-monospacegf
+# image: profile.jpg
 # about:
 #   template: marquee
 
@@ -17,4 +18,25 @@ image: profile.jpg
 
 ---
 
-About this blog
+
+What will AI be capable of tomorrow?
+
+We're building a foundational large language model featuring an infinite context window. Our breakthrough in AI training enhances understanding and processing capabilities, offering deeper, more insightful AI solutions across diverse industries.
+
+[Get early access]()
+
+### Frequently Asked Questions
+- What sets Manifest AI's model apart? Our model's infinite context window allows for unparalleled depth in understanding and response accuracy.
+
+- How does the infinite context window benefit users? It enables more precise and comprehensive responses, ideal for complex tasks and human-like interactions.
+
+- What industries can use Manifest AI's technology? Various sectors including healthcare, finance, education, and customer service benefit from our deep data processing AI.
+
+### Recent Publications
+
+[How we discovered an infinite context window]()
+
+
+### Who are we?
+
+[Carles Gelada]() and [Jacob Buckman]() are the co-founders who met at Google Brain, where they have been collaborating for over five years. Gelada, with significant contributions as a Research Scientist at OpenAI, has 1,300 citations to his name. Buckman, a PhD candidate at McGill University, complements this with 1,500 citations for his research. Their joint expertise continues to make waves in AI research.

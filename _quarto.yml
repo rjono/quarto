@@ -11,10 +11,9 @@ website:
     collapse: false
     logo: mlogo2.png
     right:
+      - posts/illustration/index.qmd
       - posts.qmd
-      - page1.qmd
-      - page2.qmd
-      - page3.qmd
+
       - icon: github
         href: https://github.com/
       - icon: twitter
@@ -29,7 +28,7 @@ format:
     theme:
       light: 
         - flatly
-        # - customgpt5.scss
+        - custom1.scss
       # dark: darkly
       
     grid:

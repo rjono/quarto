@@ -31,3 +31,10 @@
     }
   }
 }
+@mixin apply-sfmono {
+  font-family: 'SFMono-Regular', monospace;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @include apply-sfmono;
+}
