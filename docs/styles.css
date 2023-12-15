@@ -1,0 +1,48 @@
+/* Basic Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 1200px; /* Adjust as per main body width */
+    margin: 0 auto;
+    padding: 0 15px; /* To ensure some padding on smaller screens */
+}
+
+/* Navbar Styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.nav-left, .nav-right {
+    flex: 1;
+    text-align: center;
+}
+
+/* Ensuring navbar aligns with the main body */
+nav .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+
+    .nav-left, .nav-right {
+        flex-basis: 100%;
+        order: 1; /* Adjust order if needed */
+    }
+}
+
+/* Main Body Styles */
+/* .main-body {
+    /* Styles for main body content */
+/* } */ 
