@@ -13,6 +13,7 @@ website:
     right:
       - posts/illustration/index.qmd
       - posts.qmd
+      - posts/html-test/index.qmd
 
       - icon: github
         href: https://github.com/
