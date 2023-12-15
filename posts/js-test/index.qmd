@@ -1,0 +1,34 @@
+---
+title: "Simple Visualization with Vanilla JavaScript"
+format:
+  html:
+    toc: true
+---
+
+# Simple Bar Chart Visualization
+
+This example demonstrates a simple bar chart using vanilla JavaScript in a Quarto document.
+
+<div id="bar-chart"></div>
+
+<script>
+// Vanilla JavaScript for a Simple Bar Chart
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Access the container for the bar chart
+    var container = document.getElementById('bar-chart');
+
+    // Sample data for the bar chart
+    var data = [4, 8, 15, 16, 23, 42];
+
+    // Create bars for the chart
+    data.forEach(function(d) {
+        var bar = document.createElement('div');
+        bar.style.width = d * 10 + 'px';
+        bar.style.height = '20px';
+        bar.style.backgroundColor = 'steelblue';
+        bar.style.margin = '5px 0';
+        container.appendChild(bar);
+    });
+});
+</script>

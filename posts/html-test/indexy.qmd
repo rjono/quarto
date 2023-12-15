@@ -1,0 +1,56 @@
+---
+title: "Simple Visualization with Vanilla JavaScript"
+format:
+  html:
+    toc: true
+---
+
+<div class="thingy"></div>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Scaling Plot</title>
+    <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.4.3.min.js"></script>
+    <script type="text/javascript">
+        Bokeh.set_log_level("info");
+    </script>
+  </head>
+  <body>
+    <div class="bk-root" id="d10c8271-6fdf-4c9d-a055-ebf803fafb2b" data-root-id="259740"></div>
+    <script type="application/json" id="260374">
+    </script>
+    <script type="text/javascript">
+      (function() {
+        const fn = function() {
+          Bokeh.safely(function() {
+            (function(root) {
+              function embed_document(root) {
+              const docs_json = document.getElementById('260374').textContent;
+              const render_items = [{"docid":"44abc01a-8b56-40b5-9f06-228079440088","root_ids":["259740"],"roots":{"259740":"d10c8271-6fdf-4c9d-a055-ebf803fafb2b"}}];
+              root.Bokeh.embed.embed_items(docs_json, render_items);
+              }
+              if (root.Bokeh !== undefined) {
+                embed_document(root);
+              } else {
+                let attempts = 0;
+                const timer = setInterval(function(root) {
+                  if (root.Bokeh !== undefined) {
+                    clearInterval(timer);
+                    embed_document(root);
+                  } else {
+                    attempts++;
+                    if (attempts > 100) {
+                      clearInterval(timer);
+                      console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                    }
+                  }
+                }, 10, root)
+              }
+            })(window);
+          });
+        };
+        if (document.readyState != "loading") fn();
+        else document.addEventListener("DOMContentLoaded", fn);
+      })();
+    </script>
+  </body>
