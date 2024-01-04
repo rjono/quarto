@@ -55,34 +55,13 @@ Plot.rectY(filtered,
   }
 )
 ```
-::: {.column-margin}
 
+<!-- ::: {.column-margin}
 # Vanilla JavaScript for a Simple Bar Chart
 
-<div id="bar-chart"></div>
+<iframe src="./scaling_plot.html"></iframe>
 
-<script>
-// Vanilla JavaScript for a Simple Bar Chart
-
-document.addEventListener('DOMContentLoaded', function () {
-    // Access the container for the bar chart
-    var container = document.getElementById('bar-chart');
-
-    // Sample data for the bar chart
-    var data = [4, 8, 15, 16, 23, 42];
-
-    // Create bars for the chart
-    data.forEach(function(d) {
-        var bar = document.createElement('div');
-        bar.style.width = d * 10 + 'px';
-        bar.style.height = '20px';
-        bar.style.backgroundColor = 'steelblue';
-        bar.style.margin = '5px 0';
-        container.appendChild(bar);
-    });
-});
-</script>
-:::
+::: -->
 
 #### Import Data from a CSV File with Python
 ```{python}
@@ -91,3 +70,102 @@ import pandas as pd
 penguins = pd.read_csv("palmer-penguins.csv")
 ojs_define(data = penguins)
 ```
+
+<style>
+	body {
+		/* margin: 0; Remove default body margin */
+	}
+
+	/* .iframe-container { */
+		/* transform-origin: top left; */
+		/* position: relative; */
+		/* width: 100%;  */
+		/* max-width: 1000px;  */
+		/* margin: 0 auto; Center the container horizontally */
+	/* } */
+
+	/* iframe {
+		width: 100%;
+		height: 100%;
+		display: block;
+	} */
+
+	.iframe-container {
+		/* transform-origin: 0 0; */
+		/* position: relative; */
+		/* top: 0; */
+		/* left: 0; */
+		/* width: 100%; */
+		/* height: 100%; */
+		/* overflow: hidden; */
+		/* transform: scale(1); */
+		/* transform-origin: top left; */
+		/* border: none; */
+	}
+
+	#target {
+		background-color: #000;
+	}
+
+	iframe {
+		/* width: 100%; */
+		/* border: 32px solid #fff; */
+		/* margin: 0 auto; */
+		/* width: 100vw; */
+	}
+</style>
+
+<script>
+function resizeFrame() {
+	// var iframe = document.getElementById('myIframe');
+};
+</script>
+
+<script>
+// Function to handle messages from the iframe
+function receiveMessage(event) { 
+    if (event.data && event.data.height && event.data.width) {
+        // Assuming 'target' is the id of the surrounding div
+        var targetElement = document.getElementById('target');
+        var iframeElement = document.getElementById('myIframe');
+
+        // Calculate the scaling factor for height based on the original aspect ratio
+        var heightScale = targetElement.offsetWidth / event.data.width;
+
+        // Set the scaled height
+        var scaledHeight = event.data.height * heightScale;
+
+        // Apply the scaled width and height to the iframe
+        iframeElement.style.width = targetElement.offsetWidth + 'px';
+        iframeElement.style.height = scaledHeight + 'px';
+
+        console.log("Scaled width: ", targetElement.offsetWidth); 
+        console.log("Scaled height: ", scaledHeight);
+		window.parent.postMessage({
+					width: document.getElementById('target').offsetWidth
+				}, '*'); 
+    }
+}
+
+
+// Listen for messages from the iframe  
+window.addEventListener('message', receiveMessage, false); 
+
+</script>
+
+#### Display Jacobs Plot
+::: {.iframe-container}
+
+
+<div id="target">
+<iframe id="myIframe" src="./scaling_plot_copy.html" frameborder="0" onload="resizeFrame()"></iframe> 
+<!-- <iframe id="myIframe" src="./profile.jpg" frameborder="0" onload="resizeFrame()"></iframe> -->
+</div>
+<!-- <script>
+	let div = document.getElementById("target");
+	div.onload = function() {
+		div.style.height = div.contentWindow.document.body.scrollHeight + 'px';
+	}
+</script> -->
+
+:::
